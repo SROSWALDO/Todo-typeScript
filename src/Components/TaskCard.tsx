@@ -12,7 +12,7 @@ export default function TaskCard({ task }: TaskProps) {
     >
       <input className="toggle" type="checkbox" />
       <h2>{task.title.charAt(0).toUpperCase() + task.title.slice(1)}</h2>
-      <p>{task.description}</p>
+      
       <button className="destroy"></button>
     </div>
   );
