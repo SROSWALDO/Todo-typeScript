@@ -2,15 +2,16 @@ import { Task } from "../Interfaces/Task"
 import TaskCard from "./TaskCard"
 
 interface TaskProps {
-    tasks: Task[]
+    tasks: Task[];
+    deleteTask: (id: number) => void
 }
 
-export default function Tasklist({tasks}:TaskProps) {
+export default function Tasklist({ tasks, deleteTask }:TaskProps) {
   return (
-    <ul className="todo-list ">
+    <ul className="todo-list mt-16 ">
       {tasks.map(task => (
-          <li key={task.id}>
-            <TaskCard key={task.id} task={task} />
+          <li style={{ listStyle: 'none', padding: '5px' }} key={task.id}>
+            <TaskCard deleteTask={deleteTask} key={task.id} task={task} />
           </li>
         ))}
     </ul>
